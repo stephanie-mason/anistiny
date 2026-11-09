@@ -1,0 +1,41 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>    
+    
+    <p>
+        <em>{ new Date(frontmatter.date).toLocaleDateString("en-US", {month: 'long', year: 'numeric'}) }</em><br/>
+        { frontmatter.materials }
+        <slot/>
+    </p>
+    
+    <div class="cards">
+        {frontmatter.cards?.map((card, index) => (
+            <div class="aceo-card">
+                <Image src={card} alt={frontmatter.card_alts[index]} width="250"/>
+            </div>
+            ))
+        }
+    </div>
+    <div class="images">
+        {frontmatter.images?.map((image, index) => (
+            <Image src={image} alt={frontmatter.image_alts[index]} width="600" />
+            )) 
+        }
+    </div>
+    
+</BaseLayout>
+
+<style>
+    .cards {
+        max-width: calc((250px + var(--space--xs)) * 3);
+        display: flex;
+        flex-flow: row wrap;
+        gap: var(--space--xs);
+    }
+    .images img {
+        margin-right: var(--space--xs);
+    }
+</style>
