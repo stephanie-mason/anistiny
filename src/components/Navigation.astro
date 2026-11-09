@@ -1,6 +1,5 @@
 ---
 import Hamburger from "./Hamburger.astro";
-import ThemeIcon from "../components/ThemeIcon.astro";
 import { Image } from "astro:assets";
 import Logo from "../images/logo.webp";
 ---
@@ -8,22 +7,18 @@ import Logo from "../images/logo.webp";
 <div class="logo">
     <Image
         src={Logo}
-        alt="Artwork by Stephanie Paulantis (colorful logo)"
+        alt=""
         width="275"
     />
 </div>
 
 <Hamburger />
 <div class="main-navigation">
-    <ThemeIcon />
-
     <nav aria-label="Main">
         <a href="/">Home</a>
-
         <a href="/art">Gallery</a>
-        <a href="https://ko-fi.com/stef_paulantis/commissions">Commissions</a>
-        <a href="https://ko-fi.com/stef_makes_art/shop">Shop</a>
-
+        <a href="https://ko-fi.com/anistiny/commissions">Commissions</a>
+        <a href="https://ko-fi.com/anistiny/shop">Shop</a>
     </nav>
 </div>
 

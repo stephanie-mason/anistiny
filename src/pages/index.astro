@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
-import stefPic from "../images/stef-2025.webp";
 
 const pageTitle = "Art by Anistiny";
 const allProjects = await getCollection("projects");
@@ -18,13 +17,7 @@ featured = allProjects.filter((project) =>
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="intro">
-		<Image
-			src={stefPic}
-			alt="Stephanie Paulantis with bright pink flowers in her hair"
-			width="650"
-		/>
-
+	<div class="intro">		
 		<p>Hi There!</p>
 	</div>
 

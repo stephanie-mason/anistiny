@@ -10,14 +10,8 @@ aceos = allACEOs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<p>
-		I have recently begun making art trading cards and ACEOs to sell. These
-		are the collections that I have made so far. You can find
-		<a href="https://tinygallery.io/user/stef"
-			>my ACEOs for sale on TinyGallery.</a
-		>
-	</p>
-
+	<p>These are my ACEOs</p>
+		
 	<div class="collections">
 		{
 			aceos.map((aceo) => (
@@ -84,11 +78,6 @@ aceos = allACEOs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 		.collection a:hover + .thumbnails,
 		.collection a:focus + .thumbnails {
 			gap: var(--space--sm);
-		}
-		.collection a:active:before,
-		.collection a:focus:before,
-		.collection a:hover:before {
-			box-shadow: var(--lime) 3px 3px 3px;
 		}
 	</style>
 </BaseLayout>

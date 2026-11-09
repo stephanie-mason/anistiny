@@ -1,9 +1,8 @@
 :root {
-    --black: #26011c;
+    --black: #111111;
+    --purple: #26011c;
     --white: #ffffff;    
     --hot-pink: #E4287C;
-    --purple: #7D1B7E;
-    --lime: #9fff8a;
 
     --font--serif: "Merriweather", serif;
     --font--body: /home/stephanie/anistiny/src/styles/variables.css;
