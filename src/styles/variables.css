@@ -1,18 +1,16 @@
 :root {
-    --black: #0C090A;
+    --black: #26011c;
     --white: #ffffff;    
     --hot-pink: #E4287C;
     --purple: #7D1B7E;
     --lime: #9fff8a;
 
-
-    --font--cursive: "Comforter", cursive;
-    --font--serif: "Kalnia Glaze Variable", serif;
-    --font--body: "Forum", serif;
+    --font--serif: "Merriweather", serif;
+    --font--body: /home/stephanie/anistiny/src/styles/variables.css;
 
     --touch-target--min: 42px;    
     --max-width--text: 30em;
-    --menu-width: 16rem;
+    --max-width--content: 60rem;
 
     --space--xs: 6px;
     --space--sm: 12px;
@@ -20,13 +18,9 @@
 
     --border-width--md: 2px;    
 }
-@media (min-width: 778px) {
-    :root {
-        --max-width--content: calc(100vw - var(--menu-width));
-    }
-}
+
 @font-palette-values --custom {
-    font-family: "Kalnia Glaze Variable";
+    font-family: "Merriweather Variable";
 	override-colors:
     0 #66357a,
     1 #3b171f, 
