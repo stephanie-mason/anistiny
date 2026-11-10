@@ -1,5 +1,3 @@
-# To Future Stephanie
-
 ## Run Locally
 npm run dev
 
