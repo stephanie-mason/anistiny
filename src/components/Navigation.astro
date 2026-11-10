@@ -1,8 +1,3 @@
----
-import Hamburger from "./Hamburger.astro";
----
-
-<Hamburger />
 <div class="main-navigation">
     <nav aria-label="Main">
         <a href="/">About</a>
@@ -23,7 +18,8 @@ import Hamburger from "./Hamburger.astro";
         margin-right: var(--space--sm);
         border: solid 2px var(--hot-pink);
         color: var(--white);
-        display: inline-block;
+        display: block;
+        margin-bottom: var(--space--xs);
     }
     a:hover,
     a:active,
@@ -31,5 +27,10 @@ import Hamburger from "./Hamburger.astro";
         background: var(--blue);
         color: var(--black);
         transform: scale(1.1);
+    }
+    @media (min-width: 461px) {
+        a {
+            display: inline-block;
+        }
     }
 </style>

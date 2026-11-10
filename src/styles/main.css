@@ -7,9 +7,12 @@ html {
     font-family: var(--font--body);
     font-palette: --custom;    
 }
-body {
-    margin: 0;
+body {    
     font-size: 20px;
+    margin: 0;
+}
+main {
+    padding: var(--space--sm);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font--body);
@@ -36,4 +39,21 @@ a:focus {
 a:focus {
     outline-style: solid;
     outline-width: 2px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space--sm);
+}
+
+@media (min-width: 421px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 641px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

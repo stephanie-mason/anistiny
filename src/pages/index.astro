@@ -9,7 +9,7 @@ let { projects, featured } = Astro.props;
 
 projects = allProjects
 	.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-	.slice(0, 5);
+	.slice(0, 3);
 featured = allProjects.filter((project) =>
 	project.data.categories.includes("featured"),
 );
@@ -117,13 +117,5 @@ featured = allProjects.filter((project) =>
 	</div-->
 
 	<style>
-		.cards {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-between;
-		}
-		.card {
-			flex: 0 0 33%;
-		}
 	</style>
 </BaseLayout>

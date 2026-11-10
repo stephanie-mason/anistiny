@@ -8,10 +8,10 @@ const allProjects = await getCollection("projects");
 let { projects, featured } = Astro.props;
 
 projects = allProjects
-.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-.slice(0, 5);
+    .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+    .slice(0, 5);
 featured = allProjects.filter((project) =>
-project.data.categories.includes("featured"),
+    project.data.categories.includes("featured"),
 );
 ---
 
@@ -22,46 +22,38 @@ project.data.categories.includes("featured"),
                 const year = project.data.date.getFullYear();
                 const month = project.data.date.getMonth();
                 const fullMonth = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
                 ];
                 return (
-                <Card
-                title={project.data.title}
-                href={`/projects/${project.id}/`}
-                image={project.data.cover}
-                image_alt={project.data.cover_alt}
-                >
-                <p class="no-margin">
-                    {fullMonth[month]} {year}
-                </p>
-                <p class="no-margin">
-                    {project.data.materials} {project.data.dimensions}
-                </p>
-            </Card>
-            );
-        })
-    }
-</div>
+                    <Card
+                        title={project.data.title}
+                        href={`/projects/${project.id}/`}
+                        image={project.data.cover}
+                        image_alt={project.data.cover_alt}
+                    >
+                        <p class="no-margin">
+                            {fullMonth[month]} {year}
+                        </p>
+                        <p class="no-margin">
+                            {project.data.materials} {project.data.dimensions}
+                        </p>
+                    </Card>
+                );
+            })
+        }
+    </div>
 
-<style>
-    .cards {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-    .card {
-        flex: 0 0 33%;
-    }
-</style>
+    <style>
+    </style>
 </BaseLayout>
