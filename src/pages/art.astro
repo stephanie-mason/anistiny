@@ -15,8 +15,7 @@ project.data.categories.includes("featured"),
 );
 ---
 
-<BaseLayout pageTitle={pageTitle}> 
-
+<BaseLayout pageTitle={pageTitle}>
     <div class="cards">
         {
             projects.map((project) => {
@@ -43,10 +42,10 @@ project.data.categories.includes("featured"),
                 image={project.data.cover}
                 image_alt={project.data.cover_alt}
                 >
-                <p>
+                <p class="no-margin">
                     {fullMonth[month]} {year}
                 </p>
-                <p>
+                <p class="no-margin">
                     {project.data.materials} {project.data.dimensions}
                 </p>
             </Card>
@@ -55,5 +54,14 @@ project.data.categories.includes("featured"),
     }
 </div>
 
-<style></style>
+<style>
+    .cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .card {
+        flex: 0 0 33%;
+    }
+</style>
 </BaseLayout>

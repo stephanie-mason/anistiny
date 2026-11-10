@@ -1,42 +1,61 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const { title, href, image, image_alt } = Astro.props;
 ---
-<div class="card">    
-    <a href={href}><h2>{title}</h2></a>
-    <Image src={image} alt={image_alt} width="300" height="300"/>
-    
+
+<div class="card">
+    <a href={href}><h3>{title}</h3></a>
+    <Image src={image} alt={image_alt} width="300" height="300" />
+
     <slot />
 </div>
 <style>
-    .card {        
-        display: flex;    
+    .card {
+        display: flex;
         flex-flow: column;
-        position: relative;              
+        position: relative;
         padding: var(--space--sm);
-        max-width: calc(100vw - (var(--space--xs)*2));
+        width: 300px;
+        transition: transform ease 0.2s;
+    }
+    .card:hover,
+    .card:focus-within {
+        transform: scale(1.05);
+        z-index: 1;
+    }
+    h3 {
+        margin-bottom: 0;
     }
     a {
         display: inline-block;
         text-decoration: none;
-        
     }
     a:before {
         display: block;
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
-        bottom: 0;        
+        bottom: 0;
 
         transition: box-shadow ease 0.2s;
-        border: solid 2px var(--blue);
+        box-shadow: 2px 2px 8px var(--blue);
     }
     a:active,
     a:hover,
     a:focus {
         letter-spacing: unset;
+        outline: none;
+        background: unset; 
+        transform: unset;
+    }
+    a:hover:before {
+        box-shadow: 4px 4px 12px var(--blue);
+    }
+    a:active:before,
+    a:focus:before {
+        outline: solid 2px var(--blue);
     }
     h2 {
         margin-bottom: var(--space--xs);
