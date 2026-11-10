@@ -1,12 +1,21 @@
 ---
 import Navigation from "./Navigation.astro";
+import { Image } from "astro:assets";
+import Logo from "../images/logo.webp";
 ---
 
 <header>
+    <div class="logo">
+        <Image src={Logo} alt="" width="275" />
+    </div>
+    <div class="site-name">Art by Anistiny</div>
     <Navigation />
 </header>
 
 <style>
+    .site-name {
+        font-size: 2em;
+    }
     header {
         margin: auto;
         max-width: var(--max-width--content);

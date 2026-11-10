@@ -1,21 +1,11 @@
 ---
 import Hamburger from "./Hamburger.astro";
-import { Image } from "astro:assets";
-import Logo from "../images/logo.webp";
 ---
-
-<div class="logo">
-    <Image
-        src={Logo}
-        alt=""
-        width="275"
-    />
-</div>
 
 <Hamburger />
 <div class="main-navigation">
     <nav aria-label="Main">
-        <a href="/">Home</a>
+        <a href="/">About</a>
         <a href="/art">Gallery</a>
         <a href="https://ko-fi.com/anistiny/commissions">Commissions</a>
         <a href="https://ko-fi.com/anistiny/shop">Shop</a>
@@ -23,4 +13,23 @@ import Logo from "../images/logo.webp";
 </div>
 
 <style>
+    nav {
+        margin-top: var(--space--md);
+    }
+    a {
+        text-decoration: none;
+        padding: var(--space--sm);
+        background: var(--purple);
+        margin-right: var(--space--sm);
+        border: solid 2px var(--hot-pink);
+        color: var(--white);
+        display: inline-block;
+    }
+    a:hover,
+    a:active,
+    a:focus {
+        background: var(--blue);
+        color: var(--black);
+        transform: scale(1.1);
+    }
 </style>

@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 
-const pageTitle = "Art by Anistiny";
+const pageTitle = "Hello!";
 const allProjects = await getCollection("projects");
 let { projects, featured } = Astro.props;
 
@@ -17,8 +17,22 @@ featured = allProjects.filter((project) =>
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="intro">		
-		<p>Hi There!</p>
+	<div class="intro">
+		<p>
+			Welcome to my little space on the web. Here you'll find my
+			illustrations, commission info, and links to my shop with prints &
+			original pieces.
+		</p>
+		<p>
+			In the last couple of years I have been dabbling in furry art, something
+			I was very active with as a kid but took a long break from (along with drawing
+			& painting in general.) I've been creating enough pieces lately that I decided
+			to dedicate more space for it in my life. In addition to this site, I post my art on&nbsp;
+			<a href="https://bsky.app/profile/anistiny.bsky.social">Bluesky</a>
+			&nbsp;and <a href="https://www.furaffinity.net/user/anistiny">Fur Affinity</a
+			>. I am hoping to attend a con or two in 2027.
+		</p>
+		<p>My illustrations, website, and web presence in general are all SFW.</p>
 	</div>
 
 	<h2>Recent Art</h2>
@@ -58,47 +72,46 @@ featured = allProjects.filter((project) =>
 				);
 			})
 		}
-	</div>
 
-	<!--h2>Featured Projects</h2>
+		<!--h2>Featured Projects</h2>
 	<div class="cards">
-		{
-			featured.map((project) => {
-				const year = project.data.date.getFullYear();
-				const month = project.data.date.getMonth();
-				const fullMonth = [
-					"January",
-					"February",
-					"March",
-					"April",
-					"May",
-					"June",
-					"July",
-					"August",
-					"September",
-					"October",
-					"November",
-					"December",
-				];
-				return (
-					<Card
-						title={project.data.title}
-						href={`/projects/${project.slug}/`}
-						image={project.data.cover}
-						image_alt={project.data.cover_alt}
-					>
-						<p>
-							{fullMonth[month]} {year}
-						</p>
-						<p>
-							{project.data.materials} {project.data.dimensions}
-						</p>
-					</Card>
-				);
-			})
-		}
+	{
+	featured.map((project) => {
+	const year = project.data.date.getFullYear();
+	const month = project.data.date.getMonth();
+	const fullMonth = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+	];
+	return (
+	<Card
+	title={project.data.title}
+	href={`/projects/${project.slug}/`}
+	image={project.data.cover}
+	image_alt={project.data.cover_alt}
+	>
+	<p>
+	{fullMonth[month]} {year}
+	</p>
+	<p>
+	{project.data.materials} {project.data.dimensions}
+	</p>
+	</Card>
+	);
+	})
+	}
 	</div-->
-</BaseLayout>
 
-<style>
-</style>
+		<style></style>
+	</div></BaseLayout
+>

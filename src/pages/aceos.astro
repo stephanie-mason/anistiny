@@ -11,7 +11,7 @@ aceos = allACEOs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
 <BaseLayout pageTitle={pageTitle}>
 	<p>These are my ACEOs</p>
-		
+
 	<div class="collections">
 		{
 			aceos.map((aceo) => (
@@ -72,7 +72,7 @@ aceos = allACEOs.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 			bottom: 0;
 
 			transition: box-shadow ease 0.2s;
-			border: solid 2px aqua;
+			border: solid 2px var(--blue);
 		}
 		.collection a:active + .thumbnails,
 		.collection a:hover + .thumbnails,

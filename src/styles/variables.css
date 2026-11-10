@@ -1,14 +1,15 @@
 :root {
     --black: #111111;
     --purple: #26011c;
-    --white: #ffffff;    
-    --hot-pink: #E4287C;
+    --white: #d6e4eb;    
+    --hot-pink: #92356f;
+    --pink: #e3769e;
+    --blue: #488ad5;
 
     --font--serif: "Merriweather", serif;
     --font--body: /home/stephanie/anistiny/src/styles/variables.css;
 
     --touch-target--min: 42px;    
-    --max-width--text: 30em;
     --max-width--content: 60rem;
 
     --space--xs: 6px;
