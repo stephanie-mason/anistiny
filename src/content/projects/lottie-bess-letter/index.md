@@ -1,6 +1,6 @@
 ---
 title: "Lottie and Bess Discuss a Letter"
-date: 2026-11-01
+date: 2026-10-31
 categories: ["illustration"]
 materials: ["Soft Pastell"]
 dimensions: "13\" x 19\""

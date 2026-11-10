@@ -8,8 +8,7 @@ const allProjects = await getCollection("projects");
 let { projects, featured } = Astro.props;
 
 projects = allProjects
-    .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-    .slice(0, 5);
+    .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 featured = allProjects.filter((project) =>
     project.data.categories.includes("featured"),
 );
