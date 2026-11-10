@@ -2,17 +2,16 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
-import { Image } from "astro:assets";
 
 const pageTitle = "Hello!";
 const allProjects = await getCollection("projects");
 let { projects, featured } = Astro.props;
 
 projects = allProjects
-	.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-	.slice(0, 5);
+.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+.slice(0, 5);
 featured = allProjects.filter((project) =>
-	project.data.categories.includes("featured"),
+project.data.categories.includes("featured"),
 );
 ---
 
@@ -30,18 +29,18 @@ featured = allProjects.filter((project) =>
 			to dedicate more space for it in my life. In addition to this site, I post my art on&nbsp;
 			<a href="https://bsky.app/profile/anistiny.bsky.social">Bluesky</a>
 			&nbsp;and <a href="https://www.furaffinity.net/user/anistiny">Fur Affinity</a
-			>. I am hoping to attend a con or two in 2027.
-		</p>
-		<p>My illustrations, website, and web presence in general are all SFW.</p>
-	</div>
-
-	<h2>Recent Art</h2>
-	<div class="cards">
-		{
-			projects.map((project) => {
-				const year = project.data.date.getFullYear();
-				const month = project.data.date.getMonth();
-				const fullMonth = [
+				>. I am hoping to attend a con or two in 2027.
+			</p>
+			<p>My illustrations, website, and web presence in general are all SFW.</p>
+		</div>
+		
+		<h2>Recent Art</h2>
+		<div class="cards">
+			{
+				projects.map((project) => {
+					const year = project.data.date.getFullYear();
+					const month = project.data.date.getMonth();
+					const fullMonth = [
 					"January",
 					"February",
 					"March",
@@ -54,26 +53,28 @@ featured = allProjects.filter((project) =>
 					"October",
 					"November",
 					"December",
-				];
-				return (
+					];
+					return (
 					<Card
-						title={project.data.title}
-						href={`/projects/${project.slug}/`}
-						image={project.data.cover}
-						image_alt={project.data.cover_alt}
+					title={project.data.title}
+					href={`/projects/${project.id}/`}
+					image={project.data.cover}
+					image_alt={project.data.cover_alt}
 					>
-						<p>
-							{fullMonth[month]} {year}
-						</p>
-						<p>
-							{project.data.materials} {project.data.dimensions}
-						</p>
-					</Card>
+					<p>
+						{fullMonth[month]} {year}
+					</p>
+					<p>
+						{project.data.materials} {project.data.dimensions}
+					</p>
+				</Card>
 				);
 			})
 		}
-
-		<!--h2>Featured Projects</h2>
+		
+	</div>
+	
+	<!--h2>Featured Projects</h2>
 	<div class="cards">
 	{
 	featured.map((project) => {
@@ -96,7 +97,7 @@ featured = allProjects.filter((project) =>
 	return (
 	<Card
 	title={project.data.title}
-	href={`/projects/${project.slug}/`}
+	href={`/projects/${project.id}/`}
 	image={project.data.cover}
 	image_alt={project.data.cover_alt}
 	>
@@ -111,7 +112,6 @@ featured = allProjects.filter((project) =>
 	})
 	}
 	</div-->
-
-		<style></style>
-	</div></BaseLayout
->
+	
+	<style></style>
+</BaseLayout>

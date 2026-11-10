@@ -4,7 +4,7 @@ const { title, href, image, image_alt } = Astro.props;
 ---
 <div class="card">    
     <a href={href}><h2>{title}</h2></a>
-    <Image src={image} alt={image_alt} width="300"/>
+    <Image src={image} alt={image_alt} width="300" height="300"/>
     
     <slot />
 </div>
@@ -43,8 +43,6 @@ const { title, href, image, image_alt } = Astro.props;
     }
     img {
         order: -1;
-        width: calc(100% + var(--space--sm) * 2);
-        height: 350px;
         object-fit: cover;
         margin: calc(-1 * var(--space--sm));
     }
