@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 const { frontmatter } = Astro.props;
+const coverHref = (await getImage({ src: frontmatter.cover })).src;
+const imageHrefs = await Promise.all(
+    (frontmatter.images ?? []).map(async (image) => (await getImage({ src: image })).src),
+);
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>    
+<BaseLayout pageTitle={frontmatter.title}>
     <p>
         <em
             >{
@@ -19,30 +23,40 @@ const { frontmatter } = Astro.props;
     </p>
 
     <div class="cover-image">
-        <Image
-            src={frontmatter.cover}
-            alt={frontmatter.cover_alt}
-            "
-            id="coverImage"
-        />
+        <a class="img-link" href={coverHref}>
+            <Image
+                src={frontmatter.cover}
+                alt={frontmatter.cover_alt}
+                id="coverImage"
+            />
+        </a>
     </div>
 
     <div class="more-images">
         {
             frontmatter.images?.map((image, index) => (
-                <button class="thumbnail">
+                <a class="img-link" href={imageHrefs[index]}>
                     <Image
                         src={image}
-                        alt={frontmatter.image_alts[index]}
-                        width="600"
+                        alt={frontmatter.image_alts?.[index] ?? ""}
                     />
-                </button>
+                </a>
             ))
         }
     </div>
 </BaseLayout>
 
 <style>
+    .img-link {
+        text-decoration: none;
+    }
+    .img-link:hover,
+    .img-link:focus,
+    .img-link:active {
+        background: unset;
+        transform: none;
+    }
+
     .cover-image {
         display: grid;
         margin-bottom: var(--space--sm);
