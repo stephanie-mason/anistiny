@@ -60,6 +60,7 @@ const imageHrefs = await Promise.all(
     .cover-image {
         display: grid;
         margin-bottom: var(--space--sm);
+        place-content: center;
     }
     .cover-image img {
         max-width: 100%;
@@ -68,4 +69,18 @@ const imageHrefs = await Promise.all(
         grid-column: 1 / span 1;
         transition: opacity 0.5s;
     }
+    .more-images {
+        display: flex;
+        flex-flow: row wrap;
+        gap: var(--space--xs);        
+    }
+    .img-link {
+        display: block;
+        flex: 1 1 30%;
+    }
+    .img-link img {
+        width: 100%;
+        height: unset;
+    }
+
 </style>

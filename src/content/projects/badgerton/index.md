@@ -2,7 +2,7 @@
 title: "Badgerton"
 date: 2026-11-13
 categories: ["illustration"]
-materials: ["Soft Paste;"]
+materials: ["Soft Pastel"]
 dimensions: "13\" x 19\""
 cover: "./badgerton.webp"
 cover_alt: "A large family of badgers in regency era dress gathered in front of a fireplace"
